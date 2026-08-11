@@ -1,6 +1,7 @@
 # Kali Linux VirtualBox Network Setup & Fix Guide
 
 A step-by-step guide to configuring a static **NAT Network** in VirtualBox for Kali Linux and resolving NetworkManager connection delay issues caused by Duplicate Address Detection (DAD) timeouts.
+<img width="1364" height="645" alt="kali" src="https://github.com/user-attachments/assets/c88a04f6-2650-4fb9-b78b-5eb9a925a3aa" />
 
 ---
 
@@ -14,6 +15,7 @@ A step-by-step guide to configuring a static **NAT Network** in VirtualBox for K
 | **Netmask** | `24` (`255.255.255.0`) |
 | **Gateway** | `10.0.0.1` |
 | **DNS Server** | `8.8.8.8` |
+<img width="1365" height="666" alt="screenshot network settings" src="https://github.com/user-attachments/assets/11c6bdc3-1bac-4137-b3c4-8c4b917583f9" />
 
 ---
 
@@ -41,12 +43,15 @@ A step-by-step guide to configuring a static **NAT Network** in VirtualBox for K
    * **Gateway:** `10.0.0.1`
    * **DNS servers:** `8.8.8.8`
 4. Click **Save** and apply the changes.
+<img width="1363" height="644" alt="Kali manual network configuration" src="https://github.com/user-attachments/assets/0d15a90b-6dac-48f7-96c0-d652b9021b6d" />
 
 ---
 
 ### 3. Fix Connection Delay / DAD Timeout (CLI Fix)
 
 If your network connection takes a long time to establish or hangs during startup, disable the **IPv4 Duplicate Address Detection (DAD) timeout** using `nmcli`:
+<img width="1365" height="643" alt="command to fix If you face " src="https://github.com/user-attachments/assets/318d91ea-911c-415a-ba88-189698141a30" />
 
 ```bash
 sudo nmcli connection modify "Wired connection 1" ipv4.dad-timeout 0
+
